@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 # Run after the rootfs is mounted
+# Ensure systemd is aware of new service files
+systemctl daemon-reload
+
+# Enable and start the genomics service
+systemctl enable --now alienpc-genomics.service
+
+# Start networking
 systemctl start networking.service
-nohup python3 /opt/alienpc/genomics/src/api/rest_server.py > /var/log/alienpc_api.log 2>&1 &
 
-# Add other service startup commands here
-
-echo "AlienPC services started."
+echo "AlienPC services started and genomics engine is online."
