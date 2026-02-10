@@ -1,0 +1,4 @@
+port: 5000
+debug: true
+service_name: "AlienPC Genomics Engine"
+version: "0.1.0"
