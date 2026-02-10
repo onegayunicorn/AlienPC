@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlienPC Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body { font-family: 'Courier New', Courier, monospace; background-color: #0d0d0d; color: #00ff00; padding: 20px; }
+        .container { max-width: 800px; margin: auto; border: 1px solid #00ff00; padding: 20px; box-shadow: 0 0 15px #00ff00; }
+        h1 { text-align: center; border-bottom: 1px solid #00ff00; padding-bottom: 10px; }
+        .section { margin-bottom: 20px; padding: 10px; border: 1px solid #333; }
+        textarea { width: 100%; background: #1a1a1a; color: #00ff00; border: 1px solid #00ff00; padding: 10px; }
+        button { background: #00ff00; color: #000; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; }
+        button:hover { background: #00cc00; }
+        .status { margin-top: 10px; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div id="app" class="container">
+        <h1>👽 AlienPC GENOMICS DASHBOARD</h1>
+        
+        <div class="section">
+            <h3>System Status</h3>
+            <p>Service: {{ status.service || 'Connecting...' }}</p>
+            <p>Version: {{ status.version || '---' }}</p>
+        </div>
+
+        <div class="section">
+            <h3>Synthetic Base Detection</h3>
+            <textarea v-model="sequence" rows="5" placeholder="Enter genomic sequence..."></textarea>
+            <br><br>
+            <button @click="detectSequence">Run Detection</button>
+            <div v-if="results" class="status">
+                <p>Synthetic Bases Found: {{ results.synthetic_bases }}</p>
+                <p>Confidence: {{ (results.confidence * 100).toFixed(2) }}%</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                status: {},
+                sequence: 'XXXYZZATGCXXXYZZ',
+                results: null
+            },
+            mounted() {
+                this.fetchStatus();
+            },
+            methods: {
+                fetchStatus() {
+                    axios.get('/status')
+                        .then(response => { this.status = response.data; })
+                        .catch(err => { console.error('API Error:', err); });
+                },
+                detectSequence() {
+                    axios.post('/detect/synthetic', { sequence: this.sequence })
+                        .then(response => { this.results = response.data; })
+                        .catch(err => { alert('Detection failed. Is the API running?'); });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
