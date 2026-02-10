@@ -1,8 +1,6 @@
-class NanoporePipeline:
-    def __init__(self):
-        pass
+import os
 
-    def run_sequencing(self, sample_data):
-        # Placeholder for nanopore sequencing pipeline logic
-        print(f"Running nanopore sequencing for: {sample_data}")
-        return {"sequencing_results": "ATGC...", "quality": "high"}
+def summarize(file_path):
+    # placeholder – just report file size
+    size = os.path.getsize(file_path)
+    return {"reads": size//1000, "avg_length": 1500}

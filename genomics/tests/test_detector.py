@@ -1,13 +1,15 @@
 import unittest
-from genomics.src.synthetic_base_detection.detector import SyntheticBaseDetector
+from genomics.src.synthetic_base_detection.detector import detect
 
 class TestSyntheticBaseDetector(unittest.TestCase):
     def test_detection_placeholder(self):
-        detector = SyntheticBaseDetector()
-        result = detector.detect("ATGCATGC")
-        self.assertIn("synthetic_bases_found", result)
+        result = detect("ATGCATGC")
+        self.assertIn("synthetic_bases", result)
         self.assertIn("confidence", result)
-        self.assertEqual(result["synthetic_bases_found"], 0)
+        self.assertEqual(result["synthetic_bases"], 0)
+
+    def test_detect_simple(self):
+        self.assertEqual(detect("XXXYZZ")["synthetic_bases"], 1)
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+from genomics.src.synthetic_base_detection.detector import detect
 import yaml
 from pathlib import Path
 
@@ -13,10 +14,8 @@ else:
 
 @app.route("/detect/synthetic", methods=["POST"])
 def detect_synthetic():
-    data = request.get_json()
-    # placeholder – replace with real model call
-    result = {"synthetic_bases": 0, "confidence": 0.0}
-    return jsonify(result)
+    seq = request.json.get("sequence", "")
+    return jsonify(detect(seq))
 
 @app.route("/status")
 def status():
