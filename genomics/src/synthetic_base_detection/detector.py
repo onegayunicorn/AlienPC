@@ -1,8 +1,8 @@
-class SyntheticBaseDetector:
-    def __init__(self):
-        pass
+import re
 
-    def detect(self, dna_sequence):
-        # Placeholder for synthetic base detection logic
-        print(f"Detecting synthetic bases in: {dna_sequence}")
-        return {"synthetic_bases_found": 0, "confidence": 0.0}
+def detect(seq: str):
+    matches = re.findall(r'X{2,}Y{1,}Z', seq)
+    return {"synthetic_bases": len(matches), "confidence": min(1.0, len(matches)/10)}
+
+)}
+

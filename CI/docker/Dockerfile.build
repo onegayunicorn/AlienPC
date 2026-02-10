@@ -3,8 +3,8 @@ FROM debian:stable-slim
 # Install build dependencies
 RUN apt-get update && apt-get install -y \
     debootstrap \
-    genisoimage \
-    qemu-utils \
+    grub-pc-bin \
+    xorriso \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /build
@@ -12,5 +12,5 @@ WORKDIR /build
 # Copy project files
 COPY . .
 
-# Build script placeholder
-CMD ["bash", "-c", "echo 'Building AlienPC ISO...'"]
+# Placeholder for ISO generation script
+CMD ["bash", "-c", "echo 'Run ./scripts/create_iso.sh to build the ISO.'"]
