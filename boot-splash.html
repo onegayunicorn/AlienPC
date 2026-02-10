@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlienPC Boot Splash</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        .boot-container {
+            background: #000;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .kaleidoscope {
+            width: 800px;
+            height: 800px;
+        }
+
+        .mirror-shard {
+            fill: url(#prismatic-gradient);
+            opacity: 0;
+            animation: shard-emerge 2s ease-out forwards;
+        }
+
+        /* Stagger timing for each of 8 petals */
+        .petal:nth-child(1) .mirror-shard { animation-delay: 0.1s; }
+        .petal:nth-child(2) .mirror-shard { animation-delay: 0.2s; }
+        .petal:nth-child(3) .mirror-shard { animation-delay: 0.3s; }
+        .petal:nth-child(4) .mirror-shard { animation-delay: 0.4s; }
+        .petal:nth-child(5) .mirror-shard { animation-delay: 0.5s; }
+        .petal:nth-child(6) .mirror-shard { animation-delay: 0.6s; }
+        .petal:nth-child(7) .mirror-shard { animation-delay: 0.7s; }
+        .petal:nth-child(8) .mirror-shard { animation-delay: 0.8s; }
+
+        @keyframes shard-emerge {
+            0% { opacity: 0; transform: scale(0); }
+            50% { opacity: 0.8; transform: scale(1.2); }
+            100% { opacity: 0.6; transform: scale(1); }
+        }
+
+        .logo {
+            animation: logo-crystallize 1.5s 2.5s ease-out forwards;
+        }
+
+        @keyframes logo-crystallize {
+            0% { opacity: 0; transform: scale(0.5); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .eye {
+            fill: #00ff88;
+            filter: drop-shadow(0 0 8px #00ff88);
+            animation: eye-glow 0.8s 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes eye-glow {
+            0% { filter: drop-shadow(0 0 8px #00ff88); }
+            100% { filter: drop_shadow(0 0 20px #00ff88); }
+        }
+    </style>
+</head>
+<body>
+    <div class="boot-container">
+        <svg viewBox="0 0 800 800" class="kaleidoscope">
+            <defs>
+                <linearGradient id="prismatic-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#00FFFF"/>
+                    <stop offset="50%" stop-color="#FF00FF"/>
+                    <stop offset="100%" stop-color="#FFFF00"/>
+                </linearGradient>
+            </defs>
+            <!-- 8 Symmetry Petals (ChronoForge canonical symmetries) -->
+            <g class="petal" transform="rotate(0 400 400)">
+                <path d="M400,400 L450,300 L500,400 Z" class="mirror-shard"/>
+            </g>
+            <g class="petal" transform="rotate(45 400 400)">
+                <path d="M400,400 L450,300 L500,400 Z" class="mirror-shard"/>
+            </g>
+            <g class="petal" transform="rotate(90 400 400)">
+                <path d="M400,400 L450,300 L500,400 Z" class="mirror-shard"/>
+            </g>
+            <g class="petal" transform="rotate(135 400 400)">
+                <path d="M400,400 L450,300 L500,400 Z" class="mirror-shard"/>
+            </g>
+            <g class="petal" transform="rotate(180 400 400)">
+                <path d="M400,400 L450,300 L500,400 Z" class="mirror-shard"/>
+            </g>
+            <g class="petal" transform="rotate(225 400 400)">
+                <path d="M400,400 L450,300 L500,400 Z" class="mirror-shard"/>
+            </g>
+            <g class="petal" transform="rotate(270 400 400)">
+                <path d="M400,400 L450,300 L500,400 Z" class="mirror-shard"/>
+            </g>
+            <g class="petal" transform="rotate(315 400 400)">
+                <path d="M400,400 L450,300 L500,400 Z" class="mirror-shard"/>
+            </g>
+            
+            <!-- AlienPC Logo (appears at center after convergence) -->
+            <g class="logo" opacity="0">
+                <circle cx="400" cy="400" r="80" fill="#1a1a1a"/>
+                <circle cx="370" cy="380" r="12" class="eye left-eye"/>
+                <circle cx="430" cy="380" r="12" class="eye right-eye"/>
+            </g>
+        </svg>
+    </div>
+</body>
+</html>

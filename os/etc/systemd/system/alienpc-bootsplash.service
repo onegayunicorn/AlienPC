@@ -1,0 +1,11 @@
+[Unit]
+Description=AlienPC Boot Splash
+After=systemd-user-sessions.service
+
+[Service]
+Type=simple
+ExecStart=/opt/alienpc/boot/scripts/boot-splash.sh
+StandardOutput=journal
+
+[Install]
+WantedBy=graphical.target
