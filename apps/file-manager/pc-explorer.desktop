@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=PC Explorer
+Comment=File Manager for AlienPC
+Exec=pcmanfm
+Icon=system-file-manager
+Terminal=false
+Categories=System;FileManager;

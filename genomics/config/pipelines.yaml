@@ -1,0 +1,11 @@
+nanopore_pipeline:
+  enabled: true
+  stages:
+    - name: "basecalling"
+      tool: "guppy"
+    - name: "alignment"
+      tool: "minimap2"
+synthetic_detection:
+  enabled: true
+  model: "deep_learning_v1"
+  threshold: 0.8
