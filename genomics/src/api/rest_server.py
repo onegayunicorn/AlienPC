@@ -1,9 +1,13 @@
 from flask import Flask, jsonify, request
 from genomics.src.synthetic_base_detection.detector import detect
+from genomics.src.api.claude_assistant import claude_bp
 import yaml
 from pathlib import Path
 
 app = Flask(__name__)
+
+# Register Claude AI Blueprint
+app.register_blueprint(claude_bp)
 
 # Load configuration
 CONFIG_PATH = Path(__file__).parent.parent.parent / "config" / "api_config.yaml"
@@ -19,7 +23,11 @@ def detect_synthetic():
 
 @app.route("/status")
 def status():
-    return jsonify({"service": "AlienPC Genomics Engine", "version": "0.1.0"})
+    return jsonify({
+        "service": "AlienPC Genomics Engine",
+        "version": "1.0.1",
+        "features": ["synthetic_base_detection", "claude_ai_assistant"]
+    })
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=CONFIG.get("port", 5000))
