@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  genomics-api:
+    build:
+      context: .
+      dockerfile: CI/docker/Dockerfile.build
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_TYPE=OMEGA_PRIMARY
+      - AKIDA_ACCELERATION=ENABLED
+      - ZERO_TRUST_MODE=STRICT
+    volumes:
+      - ./genomics:/app/genomics
+    networks:
+      - alienpc-net
+
+  plugin-registry:
+    image: node:22-alpine
+    working_dir: /app
+    volumes:
+      - ./phase4-plugin-ecosystem/registry:/app
+    command: sh -c "npm install && node server.js"
+    ports:
+      - "3000:3000"
+    networks:
+      - alienpc-net
+
+networks:
+  alienpc-net:
+    driver: bridge
