@@ -1,0 +1,13 @@
+{
+  "therapy_name": "Duchenne Muscular Dystrophy Exon Skipping v1.4",
+  "gene_target": "DMD",
+  "sequence": "AGGCTAGCTAGCTAGCTAGCCTAGCTAGCTAGCTAGCTAGCATCGATCGTAGCT",
+  "delivery_method": "LNP-mRNA",
+  "ethics_clearance": "COUNCIL-2026-02-11",
+  "off_target_score": 0.02,
+  "developer": "AlienPC BioCouncil",
+  "device_origin": "MotoG35Ω",
+  "simfold_iterations": 2048,
+  "condor_verified": true,
+  "council_members": ["Doudna", "Crick", "YourDigitalTwin"]
+}

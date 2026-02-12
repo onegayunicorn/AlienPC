@@ -1,0 +1,8 @@
+{
+  "council_members": ["Doudna", "Crick", "Franklin", "YourDigitalTwin", "NASA_Twin"],
+  "min_ethics_score": 0.85,
+  "required_signatures": 2,
+  "emergency_override": false,
+  "quantum_mirror_enabled": true,
+  "gpg_fingerprint": "D8019C31DF90736819FC15A381DBE11A561ECC62"
+}
