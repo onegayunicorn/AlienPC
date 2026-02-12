@@ -1,14 +1,37 @@
 #!/data/data/com.termux/files/usr/bin/bash
-pkg update && pkg upgrade -y
-pkg install python git gnupg openssl termux-api -y
-pip install PyGithub python-gnupg requests
+# MotoG35Ω: Full Omega Sync System
 
-mkdir -p /sdcard/alienpc/{healing_queue,audit,quarantine}
-cd /sdcard/alienpc
+set -e
 
-# Clone Omega branch
-git clone -b omega-evolution https://github.com/onegayunicorn/AlienPc.git
+echo "🛰️ MotoG35Ω Ω-Sync Initializing..."
 
-echo "✅ MotoG35Ω Omega-ready"
-echo "🔐 GPG Key: D8019C31DF90736819FC15A381DBE11A561ECC62"
-echo "🌐 Branch: omega-evolution"
+# 1. Install dependencies
+pkg update -y && pkg install git python gpg openssh -y
+
+# 2. Clone/pull AlienPC
+git config --global user.email "motog35@alienpc.omega"
+git config --global user.signingkey motog35-council@alienpc.omega
+git config --global commit.gpgsign true
+
+if [ ! -d AlienPc ]; then
+  git clone https://github.com/onegayunicorn/AlienPc.git
+  cd AlienPc
+else
+  cd AlienPc
+  git checkout omega-evolution
+  git pull origin omega-evolution
+fi
+
+# 3. Setup council GPG (import from repo)
+mkdir -p ~/.gnupg
+gpg --import docs/security/council_public_keys.asc
+
+# 4. Sync healing logs → council
+mkdir -p device-logs/genomics-logs
+# TODO: rsync or adb pull from /sdcard/healing-logs
+
+# 5. Run council dashboard simulation
+python council/simulations/kaleidoscope/council_dashboard.py
+
+echo "✅ MotoG35Ω synced to council. Ready for protocols."
+echo "Next: ./device-profiles/motoG35Ω/deploy_protocol.sh <protocol-name>"

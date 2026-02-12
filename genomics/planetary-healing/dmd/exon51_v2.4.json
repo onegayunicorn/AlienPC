@@ -1,0 +1,19 @@
+{
+  "protocol": "DMD Exon 51 Skipping v2.4",
+  "target": "DMD gene exon 51",
+  "crispr_guide_rna": "GTTCTTACAACAATTTCCTT",
+  "ethics_score": 0.92,
+  "council_approved": false,
+  "council_signatures": [],
+  "risk_assessment": {
+    "off_target_probability": 0.03,
+    "delivery_efficiency": 0.78,
+    "rollback_possible": true
+  },
+  "testing_status": {
+    "local_simulation": "PASS",
+    "wet_lab": "PENDING",
+    "device_deployment": "READY"
+  },
+  "mythic_glyph": "🌌 The helix unwinds, the broken mends"
+}
