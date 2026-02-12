@@ -1,0 +1,15 @@
+{
+  "device_id": "MotoG35Ω-001",
+  "owner": "Council Commander",
+  "gpg_fingerprint": "D8019C31DF90736819FC15A381DBE11A561ECC62",
+  "capabilities": {
+    "genomic_processing": true,
+    "quantum_signing": true,
+    "mesh_networking": true,
+    "offline_queue": true
+  },
+  "healing_queue": "/sdcard/alienpc/healing_queue/",
+  "audit_log": "/sdcard/alienpc/quantum_audit.log",
+  "last_sync": "2026-02-11T23:59:59Z",
+  "branch": "omega-evolution"
+}

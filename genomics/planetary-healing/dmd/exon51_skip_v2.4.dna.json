@@ -1,0 +1,19 @@
+{
+  "therapy_id": "DMD-EX51-2026-02-11",
+  "therapy_name": "Exon 51 Skipping with Enhanced LNP Delivery",
+  "gene_target": "DMD",
+  "mutation": "Deletion exons 48-50",
+  "crispr_guide": "ACCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGC",
+  "delivery_method": "Ionizable LNP + Muscle-Targeting Peptide",
+  "off_target_score": 0.015,
+  "efficacy_in_vitro": 0.89,
+  "efficacy_in_vivo": 0.76,
+  "developer": "AlienPC BioCouncil",
+  "device_origin": "MotoG35Ω",
+  "council_approved": true,
+  "approval_date": "2026-02-11",
+  "simfold_iterations": 4096,
+  "condor_verified": true,
+  "quantum_signature": "Q7F9K2L4M8N1P3R6-D8019C31DF90",
+  "audit_branch": "omega-evolution"
+}
