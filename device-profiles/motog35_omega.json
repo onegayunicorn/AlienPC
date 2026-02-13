@@ -1,0 +1,15 @@
+{
+  "device_name": "MotoG35Ω",
+  "architecture": "arm64-v8a",
+  "os": "Android (Termux)",
+  "capabilities": [
+    "genomic-simulation",
+    "council-quorum-node",
+    "quantum-mesh-node"
+  ],
+  "sync_interval": 300,
+  "security": {
+    "gpg_enforced": true,
+    "encryption": "AES-256-GCM"
+  }
+}

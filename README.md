@@ -66,3 +66,17 @@ The repository is protected by two primary GitHub Actions workflows:
 
 ---
 **Your repository is live and ready for evolution!** 🚀
+
+## 👯 Digital Twin Integration
+
+The repository now includes a core **Digital Twin** framework to synchronize real-world device states with our evolutionary models.
+
+### Key Components
+- **`bin/omega-feed-twin.py`**: The core process that maintains the digital twin state in `council/logs/`.
+- **`scripts/sync_motog35_twin.sh`**: A Termux-ready script for the MotoG35Ω device to push local metrics.
+- **`brain/twin_processor.py`**: Analyzes twin data to determine system coherence and healing alignment.
+
+### Operational Workflow
+1.  **Initialize Twin**: Run `python3 bin/omega-feed-twin.py` on your control server.
+2.  **Device Sync**: Execute `bash scripts/sync_motog35_twin.sh` on your MotoG35Ω device.
+3.  **Brain Analysis**: Use `python3 brain/twin_processor.py` to get real-time coherence reports.
