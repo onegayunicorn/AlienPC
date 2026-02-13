@@ -1,0 +1,9 @@
+{
+  "council_members": [
+    "member1@example.com",
+    "member2@example.com",
+    "member3@example.com"
+  ],
+  "min_ethics_score": 0.85,
+  "required_signatures": 2
+}

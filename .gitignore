@@ -1,0 +1,26 @@
+# Environments
+.env
+*.env
+config/api_keys.env
+
+# Security
+*.key
+*.pem
+*.asc
+!docs/security/council_public_keys.asc
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

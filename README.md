@@ -1,46 +1,68 @@
 # AlienPC Ω (Omega)
 
-## Introduction
+## 🛰️ Mission Control
 
-The **AlienPC Ω** repository serves as the foundational blueprint for an advanced ecosystem dedicated to planetary healing, AI-guided genomics, and decentralized council governance. This project integrates cutting-edge gene-editing simulations with robust security protocols to address complex biological challenges, such as Duchenne Muscular Dystrophy (DMD).
+**ALIENPC Ω v2.0.0 — REPOSITORY LIVE**
+**Status:** 🟢 GITHUB REPOSITORY OPERATIONAL
+**Quantum Coherence:** INFRASTRUCTURE DEPLOYED
 
-## Project Structure
+---
 
-The repository is organized into several specialized directories to ensure a clear separation of concerns and a modular architecture:
+## 🚀 Overview
+
+The **AlienPC Ω** repository is the foundational blueprint for an advanced ecosystem dedicated to planetary healing, AI-guided genomics, and decentralized council governance. This project integrates cutting-edge gene-editing simulations with robust security protocols to address complex biological challenges, such as Duchenne Muscular Dystrophy (DMD).
+
+## 📂 Repository Structure
 
 | Directory | Purpose |
 | :--- | :--- |
-| `bin/` | Contains executable scripts and core AI processes designed for Termux and Linux environments. |
-| `council/` | Houses governance protocols, decision logs, and quorum simulation tools. |
-| `genomics/` | Dedicated to planetary healing research, including patient profiles and treatment simulations. |
-| `docs/` | Comprehensive documentation covering branch strategies, security keys, and the project codex. |
-| `.github/` | Automated workflows for continuous integration and security enforcement. |
+| `brain/` | Core AI logic and memory processing layers. |
+| `council/` | Governance protocols, decision logs, and quorum simulations. |
+| `device-profiles/` | Configuration and sync profiles for supported devices (e.g., MotoG35Ω). |
+| `genomics/` | Planetary healing research, patient profiles, and treatment simulations. |
+| `mesh/` | Decentralized network and communication protocols. |
+| `plugins/` | Extensible modules for specialized healing or analysis tasks. |
+| `scripts/` | Utility scripts for automation and system maintenance. |
+| `taka/` | Specialized modules for economic and resource allocation. |
+| `docs/` | Comprehensive documentation and roadmap. |
+| `security/` | Security protocols and PGP key management. |
 
-## Getting Started
+## 🛠️ Getting Started
 
-### Prerequisites
+### 1. Clone & Verify
 
-To effectively utilize this repository, ensure you have the following tools installed:
-- **Python 3.11+** for running simulations and core processes.
-- **Git** for version control and repository management.
-- **GPG** for signing commits to comply with the project's security standards.
+```bash
+git clone https://github.com/onegayunicorn/AlienPC.git
+cd AlienPC
+```
 
-### Quick Start
+### 2. Configure Environment
 
-1.  **Clone the Repository**:
-    ```bash
-    git clone https://github.com/[username]/AlienPc.git
-    cd AlienPc
-    ```
-2.  **Initialize the Environment**:
-    Run the setup script (if available) or install necessary dependencies.
-3.  **Run a Simulation**:
-    ```bash
-    python3 council/simulations/kaleidoscope/council_dashboard.py --check-only
-    ```
+Create your local configuration by copying the template:
+```bash
+cp config/api_keys.env .env
+# Edit .env with your specific placeholders
+```
 
-## Security and Governance
+### 3. GPG Signing
 
-Security is a paramount concern for AlienPC Ω. All contributions must be **GPG-signed** to be accepted. The **Omega Council** oversees the validation of all protocols and proposals to ensure ethical and technical integrity.
+Security is paramount. All contributions must be **GPG-signed**.
+```bash
+git config --global commit.gpgsign true
+git config --global user.signingkey YOUR_KEY_ID
+```
 
-For more detailed information, please refer to the documentation in the `docs/` folder.
+## 🛡️ Security & CI/CD
+
+The repository is protected by two primary GitHub Actions workflows:
+- **Omega Evolution Validation**: Verifies directory structure, commit signatures, and protocol integrity.
+- **Security Shield**: Enforces GPG signing on the `main` branch and scans for sensitive data.
+
+## 🧬 Next Actions
+
+1. **Set up device sync**: Create Termux scripts for MotoG35Ω.
+2. **Build Council Dashboard**: Web interface for tracking quorum and decisions.
+3. **Develop Healing Protocols**: Document and simulate the first DMD protocols.
+
+---
+**Your repository is live and ready for evolution!** 🚀
