@@ -1,0 +1,10 @@
+{
+  "created_at": "2026-02-12T00:00:00Z",
+  "council_version": "1.0.0",
+  "initial_members": [
+    "member1@example.com",
+    "member2@example.com",
+    "member3@example.com"
+  ],
+  "notes": "Genesis log for council initiation."
+}

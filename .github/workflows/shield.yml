@@ -1,0 +1,16 @@
+name: Shield – GPG & OIDC Enforcement
+on: [push, pull_request]
+
+jobs:
+  shield:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Enforce Signed Commits
+        run: |
+          git log --show-signature --pretty="format:%G?" | grep -q "G" || {
+            echo "❌ Unsigned commit detected"
+            exit 1
+          }
+      - name: Rotate OIDC Token (placeholder)
+        run: echo "🔐 OIDC token rotation would happen here"

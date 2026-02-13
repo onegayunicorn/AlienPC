@@ -1,0 +1,7 @@
+{
+  "patient_id": "patient-001-synthetic",
+  "age": 10,
+  "diagnosis": "DMD",
+  "genome_sequence": "ATGCTAGCTAGCTAGCTAGCTAGCTG...",
+  "treatment_history": []
+}

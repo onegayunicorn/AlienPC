@@ -1,0 +1,9 @@
+version: "2.0"
+project: AlienPC Omega
+description: Blueprint for evolutionary planetary healing and AI-guided genomics.
+spec:
+  evolution: active
+  security: high
+  protocols:
+    - DMD-Healing-v1
+    - Council-Quorum
